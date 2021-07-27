@@ -18,6 +18,6 @@ proto_library(
 cc_proto_library(
   name = 'core_cc_proto',
   deps = [
-    '//tensorflow/core/protobuf:all_protos_cc_proto',
+    ':core_proto',
   ],
 )
