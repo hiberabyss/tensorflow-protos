@@ -5,19 +5,25 @@ proto_library(
   deps = [
     '//tensorflow/core/protobuf:all_protos_proto',
   ],
-  # srcs = glob(['tensorflow/core/protobuf/**/*.proto']),
-  # import_prefix = "tensorflow/core/protobuf",
-  # deps = [
-  #   '//tensorflow/core/framework:all_protos_proto',
-  #   '@com_github_protocolbuffers_protobuf//:descriptor_proto',
-  #   '@com_github_protocolbuffers_protobuf//:any_proto',
-  #   '@com_github_protocolbuffers_protobuf//:duration_proto',
-  # ],
 )
 
 cc_proto_library(
   name = 'core_cc_proto',
   deps = [
     ':core_proto',
+  ],
+)
+
+proto_library(
+  name = 'serving_apis_proto',
+  deps = [
+    '//tensorflow_serving/apis:serving_apis_proto',
+  ],
+)
+
+cc_proto_library(
+  name = 'serving_apis_cc_proto',
+  deps = [
+    ':serving_apis_proto',
   ],
 )
